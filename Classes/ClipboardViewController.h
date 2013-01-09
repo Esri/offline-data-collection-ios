@@ -25,7 +25,7 @@
  whether the user has connectivity, etc.
  */
 
-@interface ClipboardViewController : UIViewController <AGSMapViewLayerDelegate, AGSMapViewTouchDelegate, AGSMapViewCalloutDelegate, 
+@interface ClipboardViewController : UIViewController <AGSLayerDelegate ,AGSMapViewLayerDelegate, AGSMapViewTouchDelegate, AGSMapViewCalloutDelegate,
                                                    InspectionFormDelegate, AGSFeatureLayerEditingDelegate,AGSAttachmentManagerDelegate,
                                                     AGSInfoTemplateDelegate> 
 {

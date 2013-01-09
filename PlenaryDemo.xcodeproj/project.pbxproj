@@ -53,6 +53,8 @@
 		78B5176D13BBCEC0002F991F /* inspection_form.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B5176B13BBCEC0002F991F /* inspection_form.png */; };
 		78C6239213BAE12100019D67 /* green_post_it.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C6239013BAE12100019D67 /* green_post_it.png */; };
 		884B14BD15E4515C0030A2ED /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B14BC15E4515C0030A2ED /* Reachability.m */; };
+		8868EBB7167A97FE0036A0DA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EBB6167A97FE0036A0DA /* libc++.dylib */; };
+		8868EBB9167A98310036A0DA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EBB8167A98310036A0DA /* OpenGLES.framework */; };
 		97CC582715488B370056F6FD /* Imagery.tpk in Resources */ = {isa = PBXBuildFile; fileRef = 97CC582615488B370056F6FD /* Imagery.tpk */; };
 		AF5B28CB124D17C1001577AD /* Bing Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B28C7124D17C1001577AD /* Bing Logo.png */; };
 		AF5B28CC124D17C1001577AD /* Bing Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B28C8124D17C1001577AD /* Bing Logo@2x.png */; };
@@ -63,9 +65,7 @@
 		AF5B2974124D20B9001577AD /* GpsDisplayHeading.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B2970124D20B9001577AD /* GpsDisplayHeading.png */; };
 		AF5B2975124D20B9001577AD /* GpsDisplayHeading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B2971124D20B9001577AD /* GpsDisplayHeading@2x.png */; };
 		AF6FBC8C12550E5300F476B4 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6FBC8B12550E5300F476B4 /* MainWindow-iPad.xib */; };
-		C55112E9148D5A3D00FFCED0 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C55112E8148D5A3D00FFCED0 /* libstdc++.dylib */; };
 		C55112F5148D6D9800FFCED0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C55112F4148D6D9800FFCED0 /* libz.dylib */; };
-		C56B3FD214C64E68003A46EB /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C56B3FD114C64E68003A46EB /* ArcGIS.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +129,8 @@
 		78D7ADCC13BAD7D900D73C28 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		884B14BB15E4515C0030A2ED /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		884B14BC15E4515C0030A2ED /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8868EBB6167A97FE0036A0DA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		8868EBB8167A98310036A0DA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* PlenaryDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PlenaryDemo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		97CC582615488B370056F6FD /* Imagery.tpk */ = {isa = PBXFileReference; lastKnownFileType = file; path = Imagery.tpk; sourceTree = "<group>"; };
 		AF5B28C7124D17C1001577AD /* Bing Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bing Logo.png"; sourceTree = "<group>"; };
@@ -142,7 +144,6 @@
 		AF6FBC8B12550E5300F476B4 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		C55112E8148D5A3D00FFCED0 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		C55112F4148D6D9800FFCED0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C56B3FD114C64E68003A46EB /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = $HOME/Library/SDKs/ArcGIS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,9 +151,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8868EBB9167A98310036A0DA /* OpenGLES.framework in Frameworks */,
+				8868EBB7167A97FE0036A0DA /* libc++.dylib in Frameworks */,
 				C55112F5148D6D9800FFCED0 /* libz.dylib in Frameworks */,
 				782920E413BB78BD00767BE1 /* CoreText.framework in Frameworks */,
-				C55112E9148D5A3D00FFCED0 /* libstdc++.dylib in Frameworks */,
 				78B5174313BBCA94002F991F /* SystemConfiguration.framework in Frameworks */,
 				782920E513BB78BD00767BE1 /* MobileCoreServices.framework in Frameworks */,
 				782920E613BB78BD00767BE1 /* Security.framework in Frameworks */,
@@ -194,8 +196,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				8868EBB8167A98310036A0DA /* OpenGLES.framework */,
+				8868EBB6167A97FE0036A0DA /* libc++.dylib */,
 				97CC582615488B370056F6FD /* Imagery.tpk */,
-				C56B3FD114C64E68003A46EB /* ArcGIS.bundle */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -408,7 +411,6 @@
 				7873A80813C395A400105E3E /* Icon.png in Resources */,
 				7873A80913C395A400105E3E /* Icon-72.png in Resources */,
 				7856C96E13F43EAC0006ADCE /* Settings.bundle in Resources */,
-				C56B3FD214C64E68003A46EB /* ArcGIS.bundle in Resources */,
 				97CC582715488B370056F6FD /* Imagery.tpk in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +446,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/**";
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -475,7 +477,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/**";
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PlenaryDemo_Prefix.pch;
 				GCC_VERSION = "";

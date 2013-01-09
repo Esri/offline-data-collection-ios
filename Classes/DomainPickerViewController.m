@@ -90,7 +90,7 @@
 					[self.templates addObject:t];
 					// try to pull value from attributes first, in case for some
 					// weird reason it is different than typeId
-					id ttv = [t.prototype.attributes objectForKey:self.fieldInfo.fieldName];
+					id ttv = [t.prototype.allAttributes objectForKey:self.fieldInfo.fieldName];
 					if (!ttv){
 						ttv = ft.typeId;
 					}

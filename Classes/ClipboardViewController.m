@@ -224,7 +224,7 @@
 
 #pragma mark -
 #pragma mark MapViewLayer Delegate
-- (void)mapView:(AGSMapView *)mapView didLoadLayerForLayerView:(UIView<AGSLayerView> *)layerView
+- (void)layerDidLoad:(AGSLayer *)layer;
 {
     _numLayersLoaded++;
     
@@ -392,7 +392,7 @@
 	}
     
     [self filterPopupInfo:popupInfo];
-    popupInfo.title = [graphic.attributes objectForKey:@"name"];
+    popupInfo.title = [graphic.allAttributes objectForKey:@"name"];
     
 	// create a popup from the popupInfo and a feature
 	self.currentFeatureToInspectPopup = [[AGSPopup alloc]initWithGraphic:graphic popupInfo:popupInfo];
@@ -410,7 +410,7 @@
 -(void)inspectionFormDidCancel:(InspectionFormViewController *)inspectionVC
 {
     [self.inspectionLayer removeGraphic:self.currentInspectionPopup.graphic];
-    [self.inspectionLayer dataChanged];
+    [self.inspectionLayer refresh];
     
     [self.clip removeFromSuperview];
     [self.view insertSubview:self.clip aboveSubview:self.clipboard];
@@ -433,7 +433,7 @@
         }
         
         //refresh layer
-        [self.inspectionLayer dataChanged];
+        [self.inspectionLayer refresh];
     }
     
     [self.clip removeFromSuperview];
@@ -566,14 +566,8 @@
     //Load the Imagery.tpk tile package
     AGSLocalTiledLayer *tiledLyr = [AGSLocalTiledLayer localTiledLayerWithName:@"Imagery"];
     
-	UIView<AGSLayerView>* lyrView =	[self.mapView addMapLayer:tiledLyr withName:@"Basemap Layer"];
-	//Good practice to enable these properties for bottom most layer
-	//provides good user experience
-	lyrView.drawDuringPanning = YES;
-	lyrView.drawDuringZooming = YES;
-    
-    
-    
+	[self.mapView addMapLayer:tiledLyr withName:@"Basemap Layer"];
+	
 	AGSEnvelope *teapotDomeEnv = [AGSEnvelope envelopeWithXmin:-11821994.711433 
                                                           ymin:5354125.129688 
                                                           xmax:-11821615.846141 
@@ -589,12 +583,14 @@
     
     NSURL* url = [NSURL URLWithString: self.featureLayerUrl]; 	 
     self.featuresLayer = [AGSFeatureLayer featureServiceLayerWithURL: url mode: AGSFeatureLayerModeSnapshot];
+    self.featuresLayer.delegate = self;
     self.featuresLayer.infoTemplateDelegate = self.featuresLayer;
     self.featuresLayer.outFields = [NSArray arrayWithObject:@"*"];
     [self.mapView addMapLayer:self.featuresLayer withName:kFeatureLayerName];
     
     NSURL* inpsectionUrl = [NSURL URLWithString: self.inspectionLayerUrl]; 	 
     self.inspectionLayer = [AGSFeatureLayer featureServiceLayerWithURL:inpsectionUrl mode: AGSFeatureLayerModeSnapshot];
+    self.inspectionLayer.delegate = self;
     self.inspectionLayer.infoTemplateDelegate = self.inspectionLayer;
     self.inspectionLayer.outFields = [NSArray arrayWithObject:@"*"];
     [self.mapView addMapLayer:self.inspectionLayer withName:kInspectionsLayerName]; 
