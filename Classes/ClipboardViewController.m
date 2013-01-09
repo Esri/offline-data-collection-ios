@@ -121,6 +121,8 @@
     self.wifiReachability = [Reachability reachabilityForLocalWiFi];
 	[self.wifiReachability startNotifier];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(layerLoaded:) name:AGSLayerDidLoadNotification object:nil];
+    
     [self updateWifiAvailability];
     
     //grab layer URLs from Settings.  Note: If user changes URLs once app is loaded,
@@ -223,8 +225,7 @@
 }
 
 #pragma mark -
-#pragma mark MapViewLayer Delegate
-- (void)layerDidLoad:(AGSLayer *)layer;
+-(void)layerLoaded:(NSNotification *)n
 {
     _numLayersLoaded++;
     
@@ -357,7 +358,7 @@
     CATransition *transition = [CATransition animation];
     [transition setDelegate:self];
     [transition setDuration:kCurlAnimationDuration];
-    [transition setTimingFunction:nil];
+    [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     if (!_curled) {
         transition.type = @"pageCurl";
         transition.fillMode = kCAFillModeForwards;
@@ -384,15 +385,19 @@
     return YES;
 }
 
-- (void)mapView:(AGSMapView *)mapView didClickCalloutAccessoryButtonForGraphic:(AGSGraphic *)graphic
+
+#pragma mark -
+#pragma mark AGSCalloutDelegate
+- (void)didClickAccessoryButtonForCallout:(AGSCallout *)callout
 {
+    AGSGraphic* graphic = (AGSGraphic*)callout.representedObject;
 	AGSPopupInfo *popupInfo = [AGSPopupInfo popupInfoForGraphic:graphic];
 	if (!popupInfo){
 		return;
 	}
     
     [self filterPopupInfo:popupInfo];
-    popupInfo.title = [graphic.allAttributes objectForKey:@"name"];
+    popupInfo.title = [graphic attributeAsStringForKey:@"name"];
     
 	// create a popup from the popupInfo and a feature
 	self.currentFeatureToInspectPopup = [[AGSPopup alloc]initWithGraphic:graphic popupInfo:popupInfo];
@@ -410,7 +415,6 @@
 -(void)inspectionFormDidCancel:(InspectionFormViewController *)inspectionVC
 {
     [self.inspectionLayer removeGraphic:self.currentInspectionPopup.graphic];
-    [self.inspectionLayer refresh];
     
     [self.clip removeFromSuperview];
     [self.view insertSubview:self.clip aboveSubview:self.clipboard];
@@ -432,8 +436,6 @@
             self.syncButton.hidden = NO;
         }
         
-        //refresh layer
-        [self.inspectionLayer refresh];
     }
     
     [self.clip removeFromSuperview];
@@ -561,13 +563,16 @@
     self.mapView.layerDelegate = self;
     self.mapView.touchDelegate = self;
     self.mapView.calloutDelegate = self;
+    self.mapView.callout.delegate = self;
     
     
     //Load the Imagery.tpk tile package
     AGSLocalTiledLayer *tiledLyr = [AGSLocalTiledLayer localTiledLayerWithName:@"Imagery"];
     
 	[self.mapView addMapLayer:tiledLyr withName:@"Basemap Layer"];
-	
+
+    
+    
 	AGSEnvelope *teapotDomeEnv = [AGSEnvelope envelopeWithXmin:-11821994.711433 
                                                           ymin:5354125.129688 
                                                           xmax:-11821615.846141 
@@ -583,14 +588,12 @@
     
     NSURL* url = [NSURL URLWithString: self.featureLayerUrl]; 	 
     self.featuresLayer = [AGSFeatureLayer featureServiceLayerWithURL: url mode: AGSFeatureLayerModeSnapshot];
-    self.featuresLayer.delegate = self;
     self.featuresLayer.infoTemplateDelegate = self.featuresLayer;
     self.featuresLayer.outFields = [NSArray arrayWithObject:@"*"];
     [self.mapView addMapLayer:self.featuresLayer withName:kFeatureLayerName];
     
     NSURL* inpsectionUrl = [NSURL URLWithString: self.inspectionLayerUrl]; 	 
     self.inspectionLayer = [AGSFeatureLayer featureServiceLayerWithURL:inpsectionUrl mode: AGSFeatureLayerModeSnapshot];
-    self.inspectionLayer.delegate = self;
     self.inspectionLayer.infoTemplateDelegate = self.inspectionLayer;
     self.inspectionLayer.outFields = [NSArray arrayWithObject:@"*"];
     [self.mapView addMapLayer:self.inspectionLayer withName:kInspectionsLayerName]; 

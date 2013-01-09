@@ -36,7 +36,7 @@
 			self.featureLayer = (AGSFeatureLayer *)self.popup.graphic.layer;
 			
 			if (self.featureLayer.typeIdField){
-				id ftVal = [self.popup.graphic.allAttributes objectForKey:self.featureLayer.typeIdField];
+				id ftVal = [self.popup.graphic attributeForKey:self.featureLayer.typeIdField];
 				for (AGSFeatureType *ft in self.featureLayer.types){
 					if ([ft.typeId isEqual:ftVal]){
 						self.featureType = ft;
@@ -82,7 +82,7 @@
 -(NSString *)attributeStringForField:(AGSField *)field
 {
     //get the attribute for the given field name from the feature attributes
-    id value = [self.popup.graphic.allAttributes objectForKey:field.name];
+    id value = [self.popup.graphic attributeForKey:field.name];
     
     //if value is null, return an empty string representation
     if (value == [NSNull null] || value == nil)
@@ -178,7 +178,7 @@
 				for (AGSFeatureTemplate *t in ft.templates) {
 					// try to pull value from attributes first, in case for some
 					// weird reason it is different than typeId
-					id ttv = [t.prototype.allAttributes objectForKey:fi.fieldName];
+					id ttv = [t.prototype attributeForKey:fi.fieldName];
 					if (!ttv){
 						ttv = ft.typeId;
 					}

@@ -24,7 +24,7 @@
     
     id _value;
     
-    id<DomainPickerDelegate> __unsafe_unretained _delegate;
+    id<DomainPickerDelegate> __weak _delegate;
     
     AGSPopupFieldInfo *_fieldInfo;
     AttributeUtility *_attributeUtility;
@@ -43,7 +43,7 @@
 
 @property (nonatomic, strong) id value;
 
-@property (nonatomic, unsafe_unretained) id<DomainPickerDelegate> delegate;
+@property (nonatomic, weak) id<DomainPickerDelegate> delegate;
 
 @property (nonatomic, strong) NSMutableArray *templates;
 @property (nonatomic, strong) NSMutableArray *templateTypeValues;

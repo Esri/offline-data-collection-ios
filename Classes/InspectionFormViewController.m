@@ -70,7 +70,7 @@
     self.stampImageView.image = [UIImage imageNamed:@"Stamp_Outline.png"];
     
     //save original attributes in case they decide to cancel
-    self.originalFeatureAttributes = [self.inspectionEditingPopup.graphic.allAttributes mutableCopy];
+    self.originalFeatureAttributes = [[self.inspectionEditingPopup.graphic allAttributes] mutableCopy];
     
     self.attributeUtility = [[AttributeUtility alloc] initWithPopup:self.inspectionEditingPopup];
     
@@ -86,13 +86,13 @@
     //Prepopulate inspection form with values from the feature being inspected. This example assumes that attributes
     //with the same names are of the same type and just assigns those blindly to the inspection. For a real
     //app, a more defensive approach would be nice here
-    NSArray *inspectionFieldNames = [self.inspectionEditingPopup.graphic.allAttributes allKeys];
-    NSArray *featureFieldNames = [self.featureToInspectPopup.graphic.allAttributes allKeys];
+    NSArray *inspectionFieldNames = [[self.inspectionEditingPopup.graphic allAttributes] allKeys];
+    NSArray *featureFieldNames = [[self.featureToInspectPopup.graphic allAttributes] allKeys];
     NSArray *offLimitsFieldNames = [NSArray arrayWithObjects:@"OBJECTID", @"GlobalID", nil];
     
     for (NSString *fieldName in featureFieldNames) {
         if ([inspectionFieldNames containsObject:fieldName] && ![offLimitsFieldNames containsObject:fieldName]) {
-            id featureValue = [self.featureToInspectPopup.graphic.allAttributes objectForKey:fieldName];
+            id featureValue = [self.featureToInspectPopup.graphic attributeForKey:fieldName];
             [self.inspectionEditingPopup.graphic setAttribute:featureValue forKey:fieldName];
         }
     }
@@ -113,7 +113,7 @@
         AGSField *field = [self.attributeUtility.fieldDictionary objectForKey:fi.fieldName];
         if ([self.attributeUtility isAStringField:field]) {
             
-            NSString *firstString = [self.featureToInspectPopup.graphic.allAttributes objectForKey:fi.fieldName];
+            NSString *firstString = [self.featureToInspectPopup.graphic attributeForKey:fi.fieldName];
             
             //don't use if string is nil
             if (!firstString || ((NSNull *)firstString == [NSNull null]) ) {
@@ -247,15 +247,15 @@
 {
     if (self.attributeUtility.featureLayer){
 		if ([dpvc.fieldInfo.fieldName isEqualToString:self.attributeUtility.featureLayer.typeIdField]){
-			if (![dpvc.value isEqual:[self.inspectionEditingPopup.graphic.allAttributes objectForKey:dpvc.fieldInfo.fieldName]]){
+			if (![dpvc.value isEqual:[self.inspectionEditingPopup.graphic attributeForKey:dpvc.fieldInfo.fieldName]]){
                 
 				// change values based on new template chosen
 				AGSFeatureLayer *fl = self.attributeUtility.featureLayer;
 				AGSFeatureTemplate *t = dpvc.templateChosen;
 				AGSGraphic *p = t.prototype;
 				AGSGraphic *g = self.inspectionEditingPopup.graphic;
-				for (NSString *fieldName in [p.allAttributes allKeys]){
-					[g setAttribute:[p.allAttributes objectForKey:fieldName] forKey:fieldName];
+				for (NSString *fieldName in [[p allAttributes] allKeys]){
+					[g setAttribute:[p attributeForKey:fieldName] forKey:fieldName];
 				}
 				// Update popupUtility.featureType
 				for (AGSFeatureType *type in fl.types){
@@ -267,7 +267,7 @@
 		}
 	}
     
-    [self.inspectionEditingPopup.graphic.allAttributes setValue:dpvc.value forKey:dpvc.fieldInfo.fieldName];
+    [self.inspectionEditingPopup.graphic setAttribute:dpvc.value forKey:dpvc.fieldInfo.fieldName];
     [self.tableView reloadData];
     
     [self.domainPickerVC.view removeFromSuperview];
@@ -318,7 +318,7 @@
     
     //Need to show domain picker for field
     self.domainPickerVC = [[DomainPickerViewController alloc] initWithFieldInfo:fi andAttributeUtility:self.attributeUtility];
-    self.domainPickerVC.value = [self.inspectionEditingPopup.graphic.allAttributes objectForKey:fi.fieldName];
+    self.domainPickerVC.value = [self.inspectionEditingPopup.graphic attributeForKey:fi.fieldName];
     self.domainPickerVC.delegate = self;
     
     [self.view.superview addSubview:self.domainPickerVC.view];

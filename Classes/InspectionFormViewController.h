@@ -48,7 +48,7 @@
     
     DomainPickerViewController *_domainPickerVC;
     
-    id<InspectionFormDelegate> __unsafe_unretained _delegate;
+    id<InspectionFormDelegate> __weak _delegate;
     
     UIPopoverController *_imagePickerPopover;
     
@@ -71,7 +71,7 @@
 @property (nonatomic, strong) AGSPopup *inspectionEditingPopup;
 @property (nonatomic, strong) AGSPopup *featureToInspectPopup;
 
-@property (nonatomic, unsafe_unretained) id<InspectionFormDelegate> delegate;
+@property (nonatomic, weak) id<InspectionFormDelegate> delegate;
 
 /*An Image picker for adding an attachment */
 @property (nonatomic, strong) UIPopoverController *imagePickerPopover;

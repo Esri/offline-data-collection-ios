@@ -25,12 +25,13 @@
     
     //Make sure for the iPad we use our custom interface
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [window addSubview:self.clipBoardVC.view];
+        [window setRootViewController:self.clipBoardVC];
+
     }
     //and for the iPhone, just use a default viewController that
     //indicates this is really an iPad sample
     else {
-        [window addSubview:viewController.view];
+    [window setRootViewController:viewController];
     }
     
     [window makeKeyAndVisible];

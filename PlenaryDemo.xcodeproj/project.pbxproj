@@ -42,6 +42,7 @@
 		788E3C8513BE8AFB00A04406 /* Stamp_Outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 788E3C8313BE8AFB00A04406 /* Stamp_Outline.png */; };
 		7893F6AF13BAAB6000ABC4F4 /* ClipboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893F6AB13BAAB6000ABC4F4 /* ClipboardViewController.m */; };
 		7893F6B013BAAB6000ABC4F4 /* ClipboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7893F6AC13BAAB6000ABC4F4 /* ClipboardViewController.xib */; };
+		7896303113BBC81E0094C04E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7896302F13BBC81E0094C04E /* Reachability.m */; };
 		789654F613C38EC900B31A6A /* clipboard_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 789654F413C38EC900B31A6A /* clipboard_shadow.png */; };
 		789B522F13BD813800DB378A /* paperclip_piece1.png in Resources */ = {isa = PBXBuildFile; fileRef = 789B522D13BD813800DB378A /* paperclip_piece1.png */; };
 		789B99AC13C2E37600D06042 /* flip_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 789B99AA13C2E37600D06042 /* flip_icon.png */; };
@@ -52,9 +53,8 @@
 		78B5176913BBCD0C002F991F /* InspectionForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B5176513BBCD0C002F991F /* InspectionForm.xib */; };
 		78B5176D13BBCEC0002F991F /* inspection_form.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B5176B13BBCEC0002F991F /* inspection_form.png */; };
 		78C6239213BAE12100019D67 /* green_post_it.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C6239013BAE12100019D67 /* green_post_it.png */; };
-		884B14BD15E4515C0030A2ED /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B14BC15E4515C0030A2ED /* Reachability.m */; };
-		8868EBB7167A97FE0036A0DA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EBB6167A97FE0036A0DA /* libc++.dylib */; };
-		8868EBB9167A98310036A0DA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EBB8167A98310036A0DA /* OpenGLES.framework */; };
+		9755BA65167EBDCE00518E4D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9755BA64167EBDCE00518E4D /* libc++.dylib */; };
+		9755BA67167EBDD400518E4D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9755BA66167EBDD400518E4D /* OpenGLES.framework */; };
 		97CC582715488B370056F6FD /* Imagery.tpk in Resources */ = {isa = PBXBuildFile; fileRef = 97CC582615488B370056F6FD /* Imagery.tpk */; };
 		AF5B28CB124D17C1001577AD /* Bing Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B28C7124D17C1001577AD /* Bing Logo.png */; };
 		AF5B28CC124D17C1001577AD /* Bing Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B28C8124D17C1001577AD /* Bing Logo@2x.png */; };
@@ -66,6 +66,7 @@
 		AF5B2975124D20B9001577AD /* GpsDisplayHeading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5B2971124D20B9001577AD /* GpsDisplayHeading@2x.png */; };
 		AF6FBC8C12550E5300F476B4 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6FBC8B12550E5300F476B4 /* MainWindow-iPad.xib */; };
 		C55112F5148D6D9800FFCED0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C55112F4148D6D9800FFCED0 /* libz.dylib */; };
+		C56B3FD214C64E68003A46EB /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C56B3FD114C64E68003A46EB /* ArcGIS.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,8 @@
 		7893F6AA13BAAB6000ABC4F4 /* ClipboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClipboardViewController.h; sourceTree = "<group>"; };
 		7893F6AB13BAAB6000ABC4F4 /* ClipboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClipboardViewController.m; sourceTree = "<group>"; };
 		7893F6AC13BAAB6000ABC4F4 /* ClipboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClipboardViewController.xib; path = Classes/ClipboardViewController.xib; sourceTree = "<group>"; };
+		7896302E13BBC81E0094C04E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7896302F13BBC81E0094C04E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		789654F413C38EC900B31A6A /* clipboard_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clipboard_shadow.png; path = "Resources-iPad/clipboard_shadow.png"; sourceTree = "<group>"; };
 		789B522D13BD813800DB378A /* paperclip_piece1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paperclip_piece1.png; path = "Resources-iPad/paperclip_piece1.png"; sourceTree = "<group>"; };
 		789B99AA13C2E37600D06042 /* flip_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flip_icon.png; path = "Resources-iPad/flip_icon.png"; sourceTree = "<group>"; };
@@ -127,11 +130,9 @@
 		78B5176B13BBCEC0002F991F /* inspection_form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inspection_form.png; path = "Resources-iPad/inspection_form.png"; sourceTree = "<group>"; };
 		78C6239013BAE12100019D67 /* green_post_it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_post_it.png; path = "Resources-iPad/green_post_it.png"; sourceTree = "<group>"; };
 		78D7ADCC13BAD7D900D73C28 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		884B14BB15E4515C0030A2ED /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		884B14BC15E4515C0030A2ED /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		8868EBB6167A97FE0036A0DA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		8868EBB8167A98310036A0DA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* PlenaryDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PlenaryDemo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9755BA64167EBDCE00518E4D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		9755BA66167EBDD400518E4D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		97CC582615488B370056F6FD /* Imagery.tpk */ = {isa = PBXFileReference; lastKnownFileType = file; path = Imagery.tpk; sourceTree = "<group>"; };
 		AF5B28C7124D17C1001577AD /* Bing Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bing Logo.png"; sourceTree = "<group>"; };
 		AF5B28C8124D17C1001577AD /* Bing Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bing Logo@2x.png"; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		AF6FBC8B12550E5300F476B4 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		C55112E8148D5A3D00FFCED0 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		C55112F4148D6D9800FFCED0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C56B3FD114C64E68003A46EB /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = $HOME/Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +153,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8868EBB9167A98310036A0DA /* OpenGLES.framework in Frameworks */,
-				8868EBB7167A97FE0036A0DA /* libc++.dylib in Frameworks */,
+				9755BA67167EBDD400518E4D /* OpenGLES.framework in Frameworks */,
+				9755BA65167EBDCE00518E4D /* libc++.dylib in Frameworks */,
 				C55112F5148D6D9800FFCED0 /* libz.dylib in Frameworks */,
 				782920E413BB78BD00767BE1 /* CoreText.framework in Frameworks */,
 				78B5174313BBCA94002F991F /* SystemConfiguration.framework in Frameworks */,
@@ -196,9 +198,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				8868EBB8167A98310036A0DA /* OpenGLES.framework */,
-				8868EBB6167A97FE0036A0DA /* libc++.dylib */,
 				97CC582615488B370056F6FD /* Imagery.tpk */,
+				C56B3FD114C64E68003A46EB /* ArcGIS.bundle */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -242,6 +243,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9755BA66167EBDD400518E4D /* OpenGLES.framework */,
+				9755BA64167EBDCE00518E4D /* libc++.dylib */,
 				C55112F4148D6D9800FFCED0 /* libz.dylib */,
 				C55112E8148D5A3D00FFCED0 /* libstdc++.dylib */,
 				7893F5BF13BAA25F00ABC4F4 /* MediaPlayer.framework */,
@@ -262,10 +265,10 @@
 		78A93DD913CD220F006B7A6B /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
-				884B14BB15E4515C0030A2ED /* Reachability.h */,
-				884B14BC15E4515C0030A2ED /* Reachability.m */,
 				786A2E8F13BCEED800EE8888 /* AttributeUtility.h */,
 				786A2E9013BCEED800EE8888 /* AttributeUtility.m */,
+				7896302E13BBC81E0094C04E /* Reachability.h */,
+				7896302F13BBC81E0094C04E /* Reachability.m */,
 			);
 			name = "Utility Classes";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				7873A80813C395A400105E3E /* Icon.png in Resources */,
 				7873A80913C395A400105E3E /* Icon-72.png in Resources */,
 				7856C96E13F43EAC0006ADCE /* Settings.bundle in Resources */,
+				C56B3FD214C64E68003A46EB /* ArcGIS.bundle in Resources */,
 				97CC582715488B370056F6FD /* Imagery.tpk in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,12 +430,12 @@
 				1D3623260D0F684500981E51 /* PlenaryDemoAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* PlenaryDemoViewController.m in Sources */,
 				7893F6AF13BAAB6000ABC4F4 /* ClipboardViewController.m in Sources */,
+				7896303113BBC81E0094C04E /* Reachability.m in Sources */,
 				78B5176813BBCD0C002F991F /* InspectionFormViewController.m in Sources */,
 				786A2DB513BCE20500EE8888 /* InspectionFormTableViewCell.m in Sources */,
 				786A2E9113BCEED800EE8888 /* AttributeUtility.m in Sources */,
 				786A303813BD2EDA00EE8888 /* DomainPickerViewController.m in Sources */,
 				7824706913BE38E1006441B1 /* DomainPickerTableViewCell.m in Sources */,
-				884B14BD15E4515C0030A2ED /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +458,7 @@
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PlenaryDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -464,8 +468,8 @@
 				PRODUCT_NAME = Inspections;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = armv7;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -483,7 +487,7 @@
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PlenaryDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -493,8 +497,8 @@
 				PRODUCT_NAME = Inspections;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = armv7;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -508,11 +512,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -526,11 +531,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
